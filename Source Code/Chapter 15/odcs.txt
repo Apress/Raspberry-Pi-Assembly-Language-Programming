@@ -1,0 +1,27 @@
+
+codesnippets:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00010054 <_start>:
+   10054:	e59f001c 	ldr	r0, [pc, #28]	; 10078 <L4+0x6>
+   10058:	e12fff30 	blx	r0
+   1005c:	e3a00000 	mov	r0, #0
+   10060:	e3a07001 	mov	r7, #1
+   10064:	ef000000 	svc	0x00000000
+
+00010068 <myfunc>:
+   10068:	1c8a      	adds	r2, r1, #2
+   1006a:	3299      	adds	r2, #153	; 0x99
+   1006c:	1842      	adds	r2, r0, r1
+
+0001006e <L3>:
+   1006e:	bf08      	it	eq
+   10070:	1852      	addeq	r2, r2, r1
+
+00010072 <L4>:
+   10072:	3b20      	subs	r3, #32
+   10074:	b2db      	uxtb	r3, r3
+   10076:	4770      	bx	lr
+   10078:	00010069 	.word	0x00010069

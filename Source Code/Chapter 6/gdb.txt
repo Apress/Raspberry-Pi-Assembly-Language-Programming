@@ -1,0 +1,69 @@
+before bl toupper
+
+(gdb) i r
+r0             0x200e8             131304
+r1             0x20117             131351
+r2             0x0                 0
+r3             0x0                 0
+r4             0xc                 12
+r5             0xd                 13
+r6             0x0                 0
+r7             0x0                 0
+r8             0x0                 0
+r9             0x0                 0
+r10            0x0                 0
+r11            0x0                 0
+r12            0x0                 0
+sp             0x7efff380          0x7efff380
+lr             0x0                 0
+pc             0x10084             0x10084 <_start+16>
+cpsr           0x10                16
+fpscr          0x0                 0
+
+after bl toupper
+
+(gdb) i r
+r0             0x200e8             131304
+r1             0x20117             131351
+r2             0x0                 0
+r3             0x0                 0
+r4             0xc                 12
+r5             0xd                 13
+r6             0x0                 0
+r7             0x0                 0
+r8             0x0                 0
+r9             0x0                 0
+r10            0x0                 0
+r11            0x0                 0
+r12            0x0                 0
+sp             0x7efff380          0x7efff380
+lr             0x10088             65672
+pc             0x100b0             0x100b0 <toupper>
+cpsr           0x10                16
+fpscr          0x0                 0
+
+after push r4-r5
+(gdb) i r
+r0             0x200e8             131304
+r1             0x20117             131351
+r2             0x0                 0
+r3             0x0                 0
+r4             0xc                 12
+r5             0xd                 13
+r6             0x0                 0
+r7             0x0                 0
+r8             0x0                 0
+r9             0x0                 0
+r10            0x0                 0
+r11            0x0                 0
+r12            0x0                 0
+sp             0x7efff378          0x7efff378
+lr             0x10088             65672
+pc             0x100b4             0x100b4 <toupper+4>
+cpsr           0x10                16
+fpscr          0x0                 0
+
+stack:
+(gdb) x /4xw 0x7efff378
+0x7efff378:	0x0000000c	0x0000000d	0x00000001	0x7efff504
+

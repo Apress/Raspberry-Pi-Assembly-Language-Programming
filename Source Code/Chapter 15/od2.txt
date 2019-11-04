@@ -1,0 +1,39 @@
+
+upper2:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00010074 <_start>:
+   10074:	e59f002c 	ldr	r0, [pc, #44]	; 100a8 <_start+0x34>
+   10078:	e59f102c 	ldr	r1, [pc, #44]	; 100ac <_start+0x38>
+   1007c:	e3a0400c 	mov	r4, #12
+   10080:	e3a0500d 	mov	r5, #13
+   10084:	fa000009 	blx	100b0 <toupper>
+   10088:	e1a02000 	mov	r2, r0
+   1008c:	e3a00001 	mov	r0, #1
+   10090:	e59f1014 	ldr	r1, [pc, #20]	; 100ac <_start+0x38>
+   10094:	e3a07004 	mov	r7, #4
+   10098:	ef000000 	svc	0x00000000
+   1009c:	e3a00000 	mov	r0, #0
+   100a0:	e3a07001 	mov	r7, #1
+   100a4:	ef000000 	svc	0x00000000
+   100a8:	000200e0 	.word	0x000200e0
+   100ac:	00020120 	.word	0x00020120
+
+000100b0 <toupper>:
+   100b0:	b470      	push	{r4, r5, r6}
+   100b2:	460c      	mov	r4, r1
+
+000100b4 <loop>:
+   100b4:	f810 5b01 	ldrb.w	r5, [r0], #1
+   100b8:	f1a5 0661 	sub.w	r6, r5, #97	; 0x61
+   100bc:	2e19      	cmp	r6, #25
+   100be:	bf98      	it	ls
+   100c0:	3d20      	subls	r5, #32
+   100c2:	f801 5b01 	strb.w	r5, [r1], #1
+   100c6:	2d00      	cmp	r5, #0
+   100c8:	d1f4      	bne.n	100b4 <loop>
+   100ca:	eba1 0004 	sub.w	r0, r1, r4
+   100ce:	bc70      	pop	{r4, r5, r6}
+   100d0:	4770      	bx	lr

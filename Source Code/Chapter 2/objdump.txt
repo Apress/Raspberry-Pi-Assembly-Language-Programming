@@ -1,0 +1,35 @@
+
+movexamps.o:     file format elf32-littlearm
+
+Contents of section .text:
+ 0000 3a2e06e3 5d2f44e3 0210a0e1 8210a0e1  :...]/D.........
+ 0010 a210a0e1 c210a0e1 e210a0e1 6210a0e1  ............b...
+ 0020 8210a0e1 a210a0e1 c210a0e1 e210a0e1  ................
+ 0030 6210a0e1 ab14a0e3 2d10e0e3 0110e0e3  b.......-.......
+ 0040 0000a0e3 0170a0e3 000000ef           .....p......    
+Contents of section .ARM.attributes:
+ 0000 41130000 00616561 62690001 09000000  A....aeabi......
+ 0010 06080801                             ....            
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	e3062e3a 	movw	r2, #28218	; 0x6e3a
+   4:	e3442f5d 	movt	r2, #20317	; 0x4f5d
+   8:	e1a01002 	mov	r1, r2
+   c:	e1a01082 	lsl	r1, r2, #1
+  10:	e1a010a2 	lsr	r1, r2, #1
+  14:	e1a010c2 	asr	r1, r2, #1
+  18:	e1a010e2 	ror	r1, r2, #1
+  1c:	e1a01062 	rrx	r1, r2
+  20:	e1a01082 	lsl	r1, r2, #1
+  24:	e1a010a2 	lsr	r1, r2, #1
+  28:	e1a010c2 	asr	r1, r2, #1
+  2c:	e1a010e2 	ror	r1, r2, #1
+  30:	e1a01062 	rrx	r1, r2
+  34:	e3a014ab 	mov	r1, #-1426063360	; 0xab000000
+  38:	e3e0102d 	mvn	r1, #45	; 0x2d
+  3c:	e3e01001 	mvn	r1, #1
+  40:	e3a00000 	mov	r0, #0
+  44:	e3a07001 	mov	r7, #1
+  48:	ef000000 	svc	0x00000000

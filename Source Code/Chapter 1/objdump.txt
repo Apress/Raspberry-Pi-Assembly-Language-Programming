@@ -1,0 +1,25 @@
+
+HelloWorld.o:     file format elf32-littlearm
+
+Contents of section .text:
+ 0000 0100a0e3 14109fe5 0d20a0e3 0470a0e3  ......... ...p..
+ 0010 000000ef 0000a0e3 0170a0e3 000000ef  .........p......
+ 0020 00000000                             ....            
+Contents of section .data:
+ 0000 48656c6c 6f20576f 726c6421 0a        Hello World!.   
+Contents of section .ARM.attributes:
+ 0000 41130000 00616561 62690001 09000000  A....aeabi......
+ 0010 06010801                             ....            
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	e3a00001 	mov	r0, #1
+   4:	e59f1014 	ldr	r1, [pc, #20]	; 20 <_start+0x20>
+   8:	e3a0200d 	mov	r2, #13
+   c:	e3a07004 	mov	r7, #4
+  10:	ef000000 	svc	0x00000000
+  14:	e3a00000 	mov	r0, #0
+  18:	e3a07001 	mov	r7, #1
+  1c:	ef000000 	svc	0x00000000
+  20:	00000000 	.word	0x00000000

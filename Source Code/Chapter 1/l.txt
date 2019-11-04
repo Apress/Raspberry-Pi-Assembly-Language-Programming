@@ -1,0 +1,6 @@
+total 16
+-rwxr-xr-x 1 pi pi  62 Jun  6 19:25 build
+-rwxr-xr-x 1 pi pi 884 Jun  6 19:25 HelloWorld
+-rw-r--r-- 1 pi pi 728 Jun  6 19:25 HelloWorld.o
+-rw-r--r-- 1 pi pi 803 Jun  6 19:23 HelloWorld.s
+-rw-r--r-- 1 pi pi   0 Jun  6 19:34 l.txt

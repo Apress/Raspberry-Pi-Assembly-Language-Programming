@@ -1,0 +1,49 @@
+
+uppermacro:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00010074 <_start>:
+   10074:	e59f0094 	ldr	r0, [pc, #148]	; 10110 <_start+0x9c>
+   10078:	e59f1094 	ldr	r1, [pc, #148]	; 10114 <_start+0xa0>
+   1007c:	e1a02001 	mov	r2, r1
+   10080:	e4d03001 	ldrb	r3, [r0], #1
+   10084:	e353007a 	cmp	r3, #122	; 0x7a
+   10088:	ca000002 	bgt	10098 <_start+0x24>
+   1008c:	e3530061 	cmp	r3, #97	; 0x61
+   10090:	ba000000 	blt	10098 <_start+0x24>
+   10094:	e2433020 	sub	r3, r3, #32
+   10098:	e4c13001 	strb	r3, [r1], #1
+   1009c:	e3530000 	cmp	r3, #0
+   100a0:	1afffff6 	bne	10080 <_start+0xc>
+   100a4:	e0410002 	sub	r0, r1, r2
+   100a8:	e1a02000 	mov	r2, r0
+   100ac:	e3a00001 	mov	r0, #1
+   100b0:	e59f105c 	ldr	r1, [pc, #92]	; 10114 <_start+0xa0>
+   100b4:	e3a07004 	mov	r7, #4
+   100b8:	ef000000 	svc	0x00000000
+   100bc:	e59f0054 	ldr	r0, [pc, #84]	; 10118 <_start+0xa4>
+   100c0:	e59f104c 	ldr	r1, [pc, #76]	; 10114 <_start+0xa0>
+   100c4:	e1a02001 	mov	r2, r1
+   100c8:	e4d03001 	ldrb	r3, [r0], #1
+   100cc:	e353007a 	cmp	r3, #122	; 0x7a
+   100d0:	ca000002 	bgt	100e0 <_start+0x6c>
+   100d4:	e3530061 	cmp	r3, #97	; 0x61
+   100d8:	ba000000 	blt	100e0 <_start+0x6c>
+   100dc:	e2433020 	sub	r3, r3, #32
+   100e0:	e4c13001 	strb	r3, [r1], #1
+   100e4:	e3530000 	cmp	r3, #0
+   100e8:	1afffff6 	bne	100c8 <_start+0x54>
+   100ec:	e0410002 	sub	r0, r1, r2
+   100f0:	e1a02000 	mov	r2, r0
+   100f4:	e3a00001 	mov	r0, #1
+   100f8:	e59f1014 	ldr	r1, [pc, #20]	; 10114 <_start+0xa0>
+   100fc:	e3a07004 	mov	r7, #4
+   10100:	ef000000 	svc	0x00000000
+   10104:	e3a00000 	mov	r0, #0
+   10108:	e3a07001 	mov	r7, #1
+   1010c:	ef000000 	svc	0x00000000
+   10110:	0002011c 	.word	0x0002011c
+   10114:	0002016c 	.word	0x0002016c
+   10118:	0002014b 	.word	0x0002014b

@@ -1,0 +1,40 @@
+
+upper:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00010074 <_start>:
+   10074:	e59f0024 	ldr	r0, [pc, #36]	; 100a0 <_start+0x2c>
+   10078:	e59f1024 	ldr	r1, [pc, #36]	; 100a4 <_start+0x30>
+   1007c:	eb000009 	bl	100a8 <toupper>
+   10080:	e1a02000 	mov	r2, r0
+   10084:	e3a00001 	mov	r0, #1
+   10088:	e59f1014 	ldr	r1, [pc, #20]	; 100a4 <_start+0x30>
+   1008c:	e3a07004 	mov	r7, #4
+   10090:	ef000000 	svc	0x00000000
+   10094:	e3a00000 	mov	r0, #0
+   10098:	e3a07001 	mov	r7, #1
+   1009c:	ef000000 	svc	0x00000000
+   100a0:	000200e0 	.word	0x000200e0
+   100a4:	0002010f 	.word	0x0002010f
+
+000100a8 <toupper>:
+   100a8:	e92d0030 	push	{r4, r5}
+   100ac:	e1a04001 	mov	r4, r1
+
+000100b0 <loop>:
+   100b0:	e4d05001 	ldrb	r5, [r0], #1
+   100b4:	e355007a 	cmp	r5, #122	; 0x7a
+   100b8:	ca000002 	bgt	100c8 <cont>
+   100bc:	e3550061 	cmp	r5, #97	; 0x61
+   100c0:	ba000000 	blt	100c8 <cont>
+   100c4:	e2455020 	sub	r5, r5, #32
+
+000100c8 <cont>:
+   100c8:	e4c15001 	strb	r5, [r1], #1
+   100cc:	e3550000 	cmp	r5, #0
+   100d0:	1afffff6 	bne	100b0 <loop>
+   100d4:	e0410004 	sub	r0, r1, r4
+   100d8:	e8bd0030 	pop	{r4, r5}
+   100dc:	e12fff1e 	bx	lr
